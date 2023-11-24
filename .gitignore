@@ -1,0 +1,21 @@
+# Python
+__pycache__
+venv
+
+# Data
+data/*/
+*.gz
+*.zip
+*.tar
+
+
+# Darwin
+.DS_Store
+
+# Weights
+*.pth
+
+# Debug 
+debug_imgs/*.png
+debug_imgs/*/
+unused/
