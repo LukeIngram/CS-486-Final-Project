@@ -3,36 +3,38 @@
 from torch import nn
 
 
-# Reference: https://github.com/Zeleni9/pytorch-wgan/blob/master/models/wgan_gradient_penalty.py
+# Reference: https://github.com/igul222/improved_wgan_training/blob/master/gan_cifar.py
 
 class Generator(nn.Module):
-    def __init__(self, out_channels: int):
+    def __init__(self, latent_len: int = 100, dim: int = 64):
         super(Generator, self).__init__()
 
         self.main = nn.Sequential(
-            # Z latent vector 100
-            nn.ConvTranspose2d(in_channels=100, out_channels=1024, kernel_size=4, stride=1, padding=0),
-            nn.BatchNorm2d(num_features=1024),
+            # Input is Z, going into a linear layer
+            nn.Linear(latent_len, 4*4*4*dim),
+            nn.BatchNorm1d(4*4*4*dim),
             nn.ReLU(True),
 
-            # State (1024x4x4)
-            nn.ConvTranspose2d(in_channels=1024, out_channels=512, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm2d(num_features=512),
+            # Reshape to a 4x4 feature map
+            nn.Unflatten(1, (4*dim, 4, 4)),
+            # Upsample to 8x8
+
+            nn.ConvTranspose2d(4*dim, 2*dim, 5, stride=2, padding=2, output_padding=1),
+            nn.BatchNorm2d(2*dim),
             nn.ReLU(True),
 
-            # State (512x8x8)
-            nn.ConvTranspose2d(in_channels=512, out_channels=256, kernel_size=4, stride=2, padding=1),
-            nn.BatchNorm2d(num_features=256),
+            # Upsample to 16x16
+            nn.ConvTranspose2d(2*dim, dim, 5, stride=2, padding=2, output_padding=1),
+            nn.BatchNorm2d(dim),
             nn.ReLU(True),
-
-            # State (256x16x16)
-            nn.ConvTranspose2d(in_channels=256, out_channels=out_channels, kernel_size=4, stride=2, padding=1))
-            # output of main module --> Image (Cx32x32)
-
-        self.output = nn.Tanh()
-
+            
+            # Upsample to 32x32
+            nn.ConvTranspose2d(dim, 3, 5, stride=2, padding=2, output_padding=1),
+            nn.Tanh()
+        )
         
 
     def forward(self, noise):
-        x = self.main(noise)
-        return self.output(x)
+        output = self.main(noise)
+        return output.view(-1, 3, 32, 32)
+

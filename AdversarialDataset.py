@@ -24,6 +24,7 @@ class AdversarialDataset(Dataset):
             
         with open (labels_path, 'rb') as fp:
             self.labels = pickle.load(fp)
+        fp.close()
         
     def __len__(self):
         return len(self.labels)

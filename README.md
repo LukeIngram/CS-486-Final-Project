@@ -1,50 +1,38 @@
-# DefenseGAN-Pytorch: 
+# **CS486-Final-Project: DefenseGAN on CIFAR-10**
 
-<!---
-# Defense-GAN_Pytorch
-
-This repository containts the Pytorch implementation for [Defense-GAN: Protecting Classifiers Against Adversarial Attacks Using Generative Models](https://arxiv.org/pdf/1805.06605.pdf), by Samangouei, P., Kabkab, M., & Chellappa, R., at ICLR 2018. 
+Welcome to my final project for CS486 (Robust Machine Learning). For this project I implement the DefenseGAN method for [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) images. The goal is to protect three well-known image classifiers: [VGG16](https://arxiv.org/abs/1409.1556), [MobileNetV2](https://arxiv.org/abs/1801.04381), and [ResNet18](https://arxiv.org/abs/1512.03385) from adversarial perturbations in both white-box, and black-box scenarios. 
 
 
-We use [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset to test models. Also, we use [Foolbox](https://foolbox.readthedocs.io/en/latest/) to generate three different type of adversarial examples.
 
-Adversarial Attacks
+## **CIFAR-10** 
 
-- Fast Gradient Sign Method(FGSM) : [Explaining and Harnessing Adversarial Examples
-](https://arxiv.org/pdf/1412.6572.pdf)
-- DeepFool(DF) : [DeepFool: A Simple and Accurate
-Method to Fool Deep Neural Networks](https://arxiv.org/pdf/1511.04599.pdf)
-- Saliency Map Attacks(SM) : [The Limitations of Deep Learning in Adversarial Settings](https://arxiv.org/pdf/1511.07528.pdf)
+The CIFAR-10 dataset is a well known benchmark in computer vision, comprised of 32x32 RGB images of 10 different classes. 
+
+![cifar-10 thumbnails](notebook_media/CIFAR10.png)
+
+It's widely used in both image generation and classification, making it an suitable test for the DefenseGAN method.
+
+## **DefenseGAN**
+
+TODO
 
 
-## Code Descriptions
+## **Results** 
 
-`cifar10_train.ipynb` : train CNN model to classify CIFAR10 dataset
+TODO
 
-`cifar10_test.ipynb` : test trained CNN model into clean images and adversarial examples
+### **WGAN-GP**
 
-`generate_adversarial_examples.ipynb` : generate adversarial examples - FGSM, DF, and SM
+TODO
 
-`train_wgan_cifar10.py` : train WGAN model
+### **Classifiers**
 
-`cifar10_Defense-GAN.ipynb` : test defense-GAN algorithm against adversarial examples 
+TODO
 
-## Usage for train_wgan_cifar10.py
+### **DefenseGAN**
 
-Examples
+TODO
 
-```
-python train_wgan_cifar10.py
-```
+### **References**
 
-```
-python defense.py --data_path data/ --iterations 20000 --deviceD 0 --deviceG 1
-```
-
-You can see more detailed arguments.
-
-```
-python train_wgan_cifar10.py -h
-```
-
---->
+TODO
