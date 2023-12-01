@@ -98,7 +98,7 @@ The performance on the CIFAR-1o Testing Dataset is as follows:
 | ResNet18 | 94.73% | 2.56% |  1.11% | 
 | VGG16 (With DefenseGAN) | 55.81% | 38.66% | 46% |
 | MobileNetV2 (With DefenseGAN) | 49.15%  | 40.77% | 46% |
-| ResNet18 (With DefenseGAN) | 53.63% |  |48% |
+| ResNet18 (With DefenseGAN) | 53.63% | 55.13% |48% |
 
 ### **References**
 
