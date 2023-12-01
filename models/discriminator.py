@@ -1,11 +1,12 @@
 # discriminator.py
 
-from typing import Tuple
-
+import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
 
+# Translated to pytorch from this repo
 # Reference: https://github.com/igul222/improved_wgan_training/blob/master/gan_cifar.py
 
 class Discriminator(nn.Module):
@@ -33,4 +34,3 @@ class Discriminator(nn.Module):
     def forward(self, inputs):
         output = self.main(inputs)
         return output.view(-1)
-

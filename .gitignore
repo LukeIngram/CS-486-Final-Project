@@ -20,5 +20,3 @@ debug_imgs/*.png
 debug_imgs/*/
 unused/
 
-# AWS 
-train_gan.py

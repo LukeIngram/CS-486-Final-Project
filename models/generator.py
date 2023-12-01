@@ -1,8 +1,10 @@
 # generator.py 
 
+import torch
 from torch import nn
 
 
+# Translated to pytorch from this repo
 # Reference: https://github.com/igul222/improved_wgan_training/blob/master/gan_cifar.py
 
 class Generator(nn.Module):
@@ -37,4 +39,3 @@ class Generator(nn.Module):
     def forward(self, noise):
         output = self.main(noise)
         return output.view(-1, 3, 32, 32)
-
