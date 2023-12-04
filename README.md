@@ -3,13 +3,12 @@
 Welcome to my final project for CS486 (Robust Machine Learning). For this project I implement the DefenseGAN method for [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) images. The goal is to protect three well-known image classifiers: [VGG16](https://arxiv.org/abs/1409.1556), [MobileNetV2](https://arxiv.org/abs/1801.04381), and [ResNet18](https://arxiv.org/abs/1512.03385) from adversarial perturbations in both white-box, and black-box scenarios. 
 
 1. [Usage](#usage)
-2. [CIFAR-10 Dataset](#cifar-10)
-3. [DefenseGAN](#defensegan)
-4. [Results](#results)
+2. [DefenseGAN](#defensegan)
+3. [Results](#results)
     - WGAN-GP
     - Classifiers
     - DefenseGAN
-5. [References](#references)
+4. [References](#references)
 
 ## **Usage**
 
@@ -45,15 +44,6 @@ options:
                         Steps for saving the model
 ```
 **fetch_pretrained.sh**
-
-
-## **CIFAR-10** 
-
-The CIFAR-10 dataset is a well-known benchmark in computer vision, comprised of 32x32 RGB images of 10 different classes. 
-
-![cifar-10 thumbnails](notebook_media/CIFAR10.png)
-
-It's widely used in image generation and classification, making it a suitable test for the DefenseGAN method.
 
 ## **DefenseGAN**
 
