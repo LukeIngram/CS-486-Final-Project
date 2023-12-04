@@ -58,7 +58,7 @@ Inference Pipeline:
 
 ### **WGAN-GP**
 
-The researchers use Wasserstien GANS to create a smoother manifold, making projection onto the generator's range easier. While other architectures and loss combinations (ex. StyleGAN) result in better quality images, Projections onto those manifolds is a much more compute-intensive process. 
+The researchers use Wasserstien GANS to create a smoother manifold, making projection onto the generator's range easier. While other architectures and loss combinations (ex. StyleGAN) result in better quality images, projections onto those manifolds is a much more compute-intensive process. 
 
 Sample Generator output (No latent vector refinement):
 
