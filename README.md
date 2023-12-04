@@ -1,6 +1,6 @@
 # **CS486-Final-Project: DefenseGAN on CIFAR-10**
 
-Welcome to my final project for CS486 (Robust Machine Learning). For this project I implement the DefenseGAN method for [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) images. The goal is to protect three well-known image classifiers: [VGG16](https://arxiv.org/abs/1409.1556), [MobileNetV2](https://arxiv.org/abs/1801.04381), and [ResNet18](https://arxiv.org/abs/1512.03385) from adversarial perturbations in both white-box, and black-box scenarios. 
+Welcome to my final project for CS486 (Robust Machine Learning). For this project, I implement the DefenseGAN method for [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) images. The goal is to protect three well-known image classifiers: [VGG16](https://arxiv.org/abs/1409.1556), [MobileNetV2](https://arxiv.org/abs/1801.04381), and [ResNet18](https://arxiv.org/abs/1512.03385) from adversarial perturbations in both white-box and black-box scenarios. 
 
 1. [Usage](#usage)
 2. [DefenseGAN](#defensegan)
@@ -47,7 +47,7 @@ options:
 
 ## **DefenseGAN**
 
-DefenseGAN is an innovative approach to improving the robustness of deep neural networks against adversarial attacks. Leveraging the generative capabilities of Generative Adversarial Networks (GANs), DefenseGAN works by training a GAN to model the distribution of unperturbed training data. During inference, it projects inputs onto the learned data manifold before feeding them to the target neural network. This projection process effectively helps to mitigate the effects of adversarial perturbations. DefenseGAN acts as a preprocessing step, reconstructing inputs to be more akin to natural data, thus enhancing the robustness of neural networks in recognizing and dealing with adversarial examples.
+DefenseGAN is an innovative approach to improving the robustness of deep neural networks against adversarial attacks. Leveraging the generative capabilities of Generative Adversarial Networks (GANs), DefenseGAN works by training a GAN to model the distribution of unperturbed training data. During inference, it projects inputs onto the learned data manifold before feeding them to the target neural network. This projection process effectively helps to mitigate the effects of adversarial perturbations. DefenseGAN acts as a preprocessing step, reconstructing inputs to be similar to natural data, thus enhancing the robustness of neural networks in recognizing and dealing with adversarial examples.
 
 Inference Pipeline: 
 
