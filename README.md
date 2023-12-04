@@ -49,15 +49,15 @@ options:
 
 ## **CIFAR-10** 
 
-The CIFAR-10 dataset is a well known benchmark in computer vision, comprised of 32x32 RGB images of 10 different classes. 
+The CIFAR-10 dataset is a well-known benchmark in computer vision, comprised of 32x32 RGB images of 10 different classes. 
 
 ![cifar-10 thumbnails](notebook_media/CIFAR10.png)
 
-It's widely used in both image generation and classification, making it an suitable test for the DefenseGAN method.
+It's widely used in image generation and classification, making it a suitable test for the DefenseGAN method.
 
 ## **DefenseGAN**
 
-DefenseGAN is an innovative approach to improving the robustness of deep neural networks against adversarial attacks. Leveraging the generative capabilities of Generative Adversarial Networks (GANs), DefenseGAN works by training a GAN to model the distribution of unperturbed training data. During inference, it projects inputs onto the learned data manifold before feeding them to the target neural network. This projection process effectively helps to mitigate the effects of adversarial perturbations. DefenseGAN acts as a preprocessing step, reconstructing inputs to be more akin to natural data, thus enhancing the resilience of neural networks in recognizing and dealing with adversarial examples. This method is particularly valuable in scenarios where security and reliability are paramount, providing an added layer of defense against malicious attacks on machine learning models.
+DefenseGAN is an innovative approach to improving the robustness of deep neural networks against adversarial attacks. Leveraging the generative capabilities of Generative Adversarial Networks (GANs), DefenseGAN works by training a GAN to model the distribution of unperturbed training data. During inference, it projects inputs onto the learned data manifold before feeding them to the target neural network. This projection process effectively helps to mitigate the effects of adversarial perturbations. DefenseGAN acts as a preprocessing step, reconstructing inputs to be more akin to natural data, thus enhancing the robustness of neural networks in recognizing and dealing with adversarial examples.
 
 Inference Pipeline: 
 
@@ -68,7 +68,7 @@ Inference Pipeline:
 
 ### **WGAN-GP**
 
-The researchers use Wasserstien GANS as they create a smoother manifold, making projection onto the generator's range easier. While other architectures and loss combinations (ex. StyleGAN) result in better quality images, Projections onto those manifolds is a much more compute intensive process. 
+The researchers use Wasserstien GANS to create a smoother manifold, making projection onto the generator's range easier. While other architectures and loss combinations (ex. StyleGAN) result in better quality images, Projections onto those manifolds is a much more compute-intensive process. 
 
 Sample Generator output (No latent vector refinement):
 
